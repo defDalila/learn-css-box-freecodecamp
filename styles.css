@@ -2,10 +2,19 @@
   width: 500px;
   height: 600px;
   background-color: #FF79C6;
+  padding: 1px;
 }
 
 .frame {
-  border: solid 50px #282A36;
+  border: solid 50px #8BE9FD;
   width: 500px;
   padding: 50px;
+  margin: 20px auto;
+}
+
+.one {
+    width: 425px;
+    height: 150px;
+    background-color: #BD93F9;
+    margin: 20px auto;
 }

@@ -186,8 +186,6 @@ Caso precise centralizá-lo, você pode adicionar:
 ```
 
 
-
-
 </details>
 
 <br> 
@@ -204,3 +202,33 @@ margin: 10px 20px 30px 40px; /* Ordem: top, right, bottom, left */
 ```
 
 <br> 
+
+:ballot_box_with_check: Para evitar que a `.one` empurre a `.canvas` para baixo devido à margem superior, podemos adicionar um pequeno `padding` à `.canvas`, garantindo que o conteúdo dentro dela tenha um espaço interno sólido para "empurrar" contra a moldura.  
+
+<details>
+  <summary><font color='#50FA7B'><strong>Exibir Exemplo de Código</strong></font></summary>
+
+### :star: <font color='#BD93F9'><strong>Exemplo</strong></font> :star:
+
+
+```css
+.canvas {
+  width: 500px;
+  height: 300px;
+  border: 15px solid #8B4513; /* Moldura marrom */
+  background-color: white;
+  padding: 1px; /* Pequeno padding para evitar colapso de margem */
+  margin: 20px auto; /* Mantém a centralização */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+```
+</details>
+
+<br> 
+
+> [!NOTE]
+> Por que isso acontece?
+> - O **colapso de margens** ocorre quando a margem superior de `.one` entra em contato diretamente com a borda superior da `.canvas`. Como não há um conteúdo sólido antes dela, a margem "vaza" para fora, deslocando a `.canvas` para baixo.  
+> Adicionar `padding: 1px;` cria um **espaço interno mínimo**, impedindo que as margens se fundam.
+>
+> Agora, `.one` permanecerá corretamente dentro da "tela", sem deslocar a moldura! 🖼️✨
