@@ -4,7 +4,7 @@
 <p>
 
 <p align="center">
-    <img src="https://skillicons.dev/icons?i=html,css,md,vscode,git,github" height="30px">
+    <img src="https://skillicons.dev/icons?i=html,css,md,vscode,git,github,figma" height="30px">
 </p>
 
 
@@ -226,9 +226,151 @@ margin: 10px 20px 30px 40px; /* Ordem: top, right, bottom, left */
 
 <br> 
 
-> [!NOTE]
+> [!WARNING]
 > Por que isso acontece?
 > - O **colapso de margens** ocorre quando a margem superior de `.one` entra em contato diretamente com a borda superior da `.canvas`. Como não há um conteúdo sólido antes dela, a margem "vaza" para fora, deslocando a `.canvas` para baixo.  
-> Adicionar `padding: 1px;` cria um **espaço interno mínimo**, impedindo que as margens se fundam.
+> Adicionar `padding: 1px;` cria um **espaço interno mínimo**, impedindo que as margens se fundam. 
+>  Agora, `.one` permanecerá corretamente dentro da "tela", sem deslocar a moldura! 🖼️✨
+
+<br>
+
+:ballot_box_with_check: Quando adicionamos `padding: 1px;`, o tamanho total da `.canvas` aumentou porque o `padding` adiciona espaço **dentro** do elemento, expandindo sua largura e altura. Para manter as dimensões originais (**500px x 600px**), podemos remover o `padding` e, em vez disso, usar `overflow: hidden;`.  
+
+<details>
+  <summary><font color='#50FA7B'><strong>Exibir Exemplo de Código</strong></font></summary>
+
+### :star: <font color='#BD93F9'><strong>Exemplo</strong></font> :star:
+
+```css
+.canvas {
+  width: 500px;
+  height: 600px;
+  border: 15px solid #8B4513; /* Moldura marrom */
+  background-color: white;
+  overflow: hidden; /* Evita o colapso da margem sem alterar o tamanho */
+  margin: 20px auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+```
+</details>
+
+<br> 
+
+
+> [!IMPORTANT]
+> Como isso funciona?
+> - **`overflow: hidden;`** → Impede que qualquer conteúdo (incluindo margens) "vaze" para fora do `.canvas`, sem alterar suas dimensões.
+> - Isso resolve o problema do **colapso de margens**, pois o navegador trata `.canvas` como uma "barreira" sólida para o elemento `.one`, evitando que a margem de `.one` desloque a `.canvas`.
+> 
+> Agora a `.canvas` mantém suas dimensões exatas, sem ser empurrada para baixo! 🎨✨
+
+<br>
+
+:ballot_box_with_check: Para suavizar as cores e formas da sua "pintura" e deixá-la mais parecida com uma obra de **Mark Rothko**, podemos aplicar um desfoque de **2px** usando a propriedade `filter`.  
+
+<details>
+  <summary><font color='#50FA7B'><strong>Exibir Exemplo de Código</strong></font></summary>
+
+### :star: <font color='#BD93F9'><strong>Exemplo</strong></font> :star:
+
+```css
+.canvas {
+  width: 500px;
+  height: 600px;
+  border: 15px solid #8B4513; /* Moldura marrom */
+  background-color: white;
+  overflow: hidden; /* Evita o colapso da margem */
+  margin: 20px auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  filter: blur(2px); /* Suaviza as bordas e cores */
+}
+```
+
+</details>
+
+<br>
+
+> [!NOTE]
+> - **`filter: blur(2px);`** → Aplica um efeito de desfoque de 2 pixels, suavizando as transições de cores e tornando os contornos menos definidos.
+> - Isso ajuda a imitar o estilo de **Rothko**, que usava transições sutis entre cores para criar profundidade e emoção.
 >
-> Agora, `.one` permanecerá corretamente dentro da "tela", sem deslocar a moldura! 🖼️✨
+> Agora sua "pintura" tem um toque mais artístico e abstrato! 🎨✨
+>
+
+<br>
+
+:ballot_box_with_check: Para suavizar os cantos do elemento `.one`, podemos usar a propriedade `border-radius` com um valor de **9px**. Isso dará um aspecto mais arredondado às bordas do retângulo.  
+
+<details>
+  <summary><font color='#50FA7B'><strong>Exibir Exemplo de Código</strong></font></summary>
+
+### :star: <font color='#BD93F9'><strong>Exemplo</strong></font> :star:
+
+```css
+.one {
+  border-radius: 9px; /* Arredonda os cantos em 9 pixels */
+}
+```
+
+- **`border-radius: 9px;`** → Faz com que os cantos fiquem suavemente arredondados, reduzindo a nitidez das formas.
+- Isso ajuda a dar um toque mais suave e abstrato ao estilo da pintura.
+
+
+</details>
+
+<br>
+
+:ballot_box_with_check:  Para arredondar os cantos do elemento `.two` com valores diferentes para cada canto, usamos a propriedade `border-radius` especificando quatro valores na seguinte ordem:  
+
+**`top-left top-right bottom-right bottom-left`**  
+
+<details>
+
+<summary><font color='#50FA7B'><strong>Exibir Exemplo de Código</strong></font></summary>
+
+### :star: <font color='#BD93F9'><strong>Exemplo</strong></font> :star:
+
+
+```css
+.two {
+  border-radius: 8px 10px 8px 10px;
+}
+```
+
+- **`border-radius: 8px 10px 8px 10px;`**  
+  - **8px** → Canto superior esquerdo (top-left).  
+  - **10px** → Canto superior direito (top-right).  
+  - **8px** → Canto inferior direito (bottom-right).  
+  - **10px** → Canto inferior esquerdo (bottom-left). 
+
+ </details> 
+
+<br>
+
+:ballot_box_with_check: Para dar um visual mais **imperfeito e artístico**, podemos usar a propriedade `transform: rotate()` para girar os retângulos em ângulos ligeiramente diferentes. Isso fará com que pareçam pintados à mão, como nas obras de **Mark Rothko**.  
+
+<details>
+
+<summary><font color='#50FA7B'><strong>Exibir Exemplo de Código</strong></font></summary>
+
+### :star: <font color='#BD93F9'><strong>Exemplo</strong></font> :star:
+
+
+```css
+.one {
+  transform: rotate(-3deg); /* Rotação leve para a esquerda */
+}
+
+.two {
+  transform: rotate(2deg); /* Rotação leve para a direita */
+}
+```
+
+- **`transform: rotate(-3deg);`** → Inclina levemente `.one` para a esquerda.
+- **`transform: rotate(2deg);`** → Inclina `.two` para a direita.
+- Pequenas rotações criam um efeito **mais natural e orgânico**, como se os retângulos tivessem sido pintados manualmente.
+
+
+ </details> 
+
+<br>

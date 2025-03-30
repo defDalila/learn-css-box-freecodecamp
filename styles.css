@@ -1,12 +1,31 @@
+:root
+{
+  --bgcolor: #282a36;
+  --fgcolor: #f8f8f2;
+  --comment: #6272A4;
+  --currline: #44475A;
+  --pink: #FF79C6;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --purple: #bd93f9;
+  --orange: #ffb86c;
+  --yellow: #f1fa8c;
+  --red: #ff5555;
+}
+
+
 .canvas {
   width: 500px;
   height: 600px;
-  background-color: #FF79C6;
-  padding: 1px;
+  background-color: var(--purple);
+  /* padding: 1px; */
+  overflow: hidden;
+  box-shadow: 5px 5px 10px var(--currline);
+  filter: blur(0.5px);
 }
 
 .frame {
-  border: solid 50px #8BE9FD;
+  border: solid 50px var(--comment);
   width: 500px;
   padding: 50px;
   margin: 20px auto;
@@ -15,6 +34,37 @@
 .one {
     width: 425px;
     height: 150px;
-    background-color: #BD93F9;
+    background-color: var(--pink);
     margin: 20px auto;
+    box-shadow: 0 0 3px 3px var(--pink);
+    border-radius: 9px;
+    transform: rotate(-0.6deg);
+}
+
+.two {
+    width: 475px;
+    height: 200px;
+    background-color: var(--cyan);
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 3px 3px var(--cyan);
+    border-radius: 8px 20px;
+    transform: rotate(0.4deg);
+}
+
+.three {
+    width: 91%;
+    height: 28%;
+    background-color: var(--yellow);
+    margin: auto;
+    box-shadow: 0 0 5px 5px var(--yellow);
+    border-radius: 30px 25px 60px 12px;
+    transform: rotate(-0.2deg);
+}
+
+.one, .two {
+    filter: blur(1px);
+}
+
+.three {
+    filter: blur(1px);
 }
