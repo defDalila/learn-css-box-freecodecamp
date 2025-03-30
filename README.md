@@ -14,28 +14,22 @@
 
 <br>
 
+
+<img src="https://live.staticflickr.com/65535/54418788054_5c9e56be28_w.jpg" style="float:right; height:180;margin:5px">
+
+
 :ballot_box_with_check: No modelo de caixa do CSS (**CSS Box Model**), cada elemento HTML é tratado como uma caixa composta por quatro áreas principais:
+
 
 1. **Content (Conteúdo)** – A área onde o texto e outros elementos filhos aparecem.
 2. **Padding (Preenchimento)** – O espaço entre o conteúdo e a borda do elemento.
 3. **Border (Borda)** – A linha que envolve o padding e o conteúdo.
 4. **Margin (Margem)** – O espaço externo ao redor da borda, separando o elemento de outros elementos.
 
-### Representação do **Box Model**:
+<br>
 
-```
-+-------------------------+  ← Margin
-|                         |
-|  +-------------------+  |  ← Border
-|  |                   |  |
-|  |   +-----------+   |  |  ← Padding
-|  |   | Content   |   |  |
-|  |   +-----------+   |  |
-|  |                   |  |
-|  +-------------------+  |
-|                         |
-+-------------------------+
-```
+
+
 
 <details>
   <summary><font color='#50FA7B'><strong>Exibir Exemplo de Código</strong></font></summary>
@@ -64,8 +58,4 @@
 >} 
 > ```
 > Isso facilita o design responsivo e evita cálculos complicados de dimensionamento.
-
-
-
-
 
