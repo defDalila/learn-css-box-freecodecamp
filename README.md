@@ -15,7 +15,7 @@
 <br>
 
 
-<img src="https://live.staticflickr.com/65535/54418788054_5c9e56be28_w.jpg" style="float:right; height:180;margin:5px">
+
 
 
 :ballot_box_with_check: No modelo de caixa do CSS (**CSS Box Model**), cada elemento HTML é tratado como uma caixa composta por quatro áreas principais:
@@ -28,6 +28,9 @@
 
 <br>
 
+<p align="center">
+    <img src="https://live.staticflickr.com/65535/54418788054_5c9e56be28_w.jpg">
+</p>
 
 
 
